@@ -62,7 +62,7 @@ resource "aws_autoscaling_group" "main" {
   }
   tag {
     key                 = "Name"
-    value               = "local.name.prefix"
+    value               = local.name_prefix
     propagate_at_launch = true
   }
 }
