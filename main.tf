@@ -171,6 +171,9 @@ resource "aws_lb_target_group" "public" {
   target_type = "ip"
   protocol    = "HTTP"
   vpc_id      = var.default_vpc_id
+  health_check {
+    path = "/health"
+  }
 }
 
 resource "aws_lb_target_group_attachment" "public" {
